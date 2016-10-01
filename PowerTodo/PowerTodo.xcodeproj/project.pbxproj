@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50B50CDD7C5A6463B4314B85 /* Pods_PowerTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C317D8B5C2AF6971A71DFA59 /* Pods_PowerTodo.framework */; };
 		5B2EDECB1D922CC400834128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EDECA1D922CC400834128 /* AppDelegate.swift */; };
 		5B2EDECD1D922CC400834128 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EDECC1D922CC400834128 /* SignInViewController.swift */; };
 		5B2EDED01D922CC400834128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2EDECE1D922CC400834128 /* Main.storyboard */; };
@@ -17,8 +18,7 @@
 		5B6E6C7F1D9B69A200AB6605 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C7E1D9B69A200AB6605 /* HomeViewController.swift */; };
 		5B6E6C811D9B717300AB6605 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C801D9B717300AB6605 /* SignUpViewController.swift */; };
 		5B6E6C841D9B7A7400AB6605 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C831D9B7A7400AB6605 /* User.swift */; };
-		5B6E6C871D9B7D5E00AB6605 /* ResquestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C861D9B7D5E00AB6605 /* ResquestHandler.swift */; };
-		5B6E6C891D9B827B00AB6605 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C881D9B827B00AB6605 /* Constants.swift */; };
+		5B6E6C891D9B827B00AB6605 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C881D9B827B00AB6605 /* UserRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		549F28482ACC98E54BF9E0CB /* Pods-PowerTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerTodo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PowerTodo/Pods-PowerTodo.release.xcconfig"; sourceTree = "<group>"; };
 		5B2EDEC71D922CC400834128 /* PowerTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2EDECA1D922CC400834128 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B2EDECC1D922CC400834128 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -46,8 +47,9 @@
 		5B6E6C7E1D9B69A200AB6605 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5B6E6C801D9B717300AB6605 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5B6E6C831D9B7A7400AB6605 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5B6E6C861D9B7D5E00AB6605 /* ResquestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResquestHandler.swift; sourceTree = "<group>"; };
-		5B6E6C881D9B827B00AB6605 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B6E6C881D9B827B00AB6605 /* UserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		C317D8B5C2AF6971A71DFA59 /* Pods_PowerTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D76090E83DE40BD2D3CF700E /* Pods-PowerTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerTodo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerTodo/Pods-PowerTodo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B50CDD7C5A6463B4314B85 /* Pods_PowerTodo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +71,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0580D5BC2F0B6BE63784F006 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D76090E83DE40BD2D3CF700E /* Pods-PowerTodo.debug.xcconfig */,
+				549F28482ACC98E54BF9E0CB /* Pods-PowerTodo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5B2EDEBE1D922CC400834128 = {
 			isa = PBXGroup;
 			children = (
 				5B2EDEC91D922CC400834128 /* PowerTodo */,
 				5B2EDEE11D922CC500834128 /* PowerTodoTests */,
 				5B2EDEC81D922CC400834128 /* Products */,
+				0580D5BC2F0B6BE63784F006 /* Pods */,
+				A7A485A6D7527837675C524A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,10 +138,17 @@
 		5B6E6C851D9B7D4800AB6605 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				5B6E6C861D9B7D5E00AB6605 /* ResquestHandler.swift */,
-				5B6E6C881D9B827B00AB6605 /* Constants.swift */,
+				5B6E6C881D9B827B00AB6605 /* UserRouter.swift */,
 			);
 			name = helpers;
+			sourceTree = "<group>";
+		};
+		A7A485A6D7527837675C524A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C317D8B5C2AF6971A71DFA59 /* Pods_PowerTodo.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B2EDEE71D922CC500834128 /* Build configuration list for PBXNativeTarget "PowerTodo" */;
 			buildPhases = (
+				D8689A53BC2353A41CEAD060 /* [CP] Check Pods Manifest.lock */,
 				5B2EDEC31D922CC400834128 /* Sources */,
 				5B2EDEC41D922CC400834128 /* Frameworks */,
 				5B2EDEC51D922CC400834128 /* Resources */,
+				D364CB5A91D01A82A2F72C06 /* [CP] Embed Pods Frameworks */,
+				247FDB8BFC6C0E008672CE47 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,6 +251,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		247FDB8BFC6C0E008672CE47 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PowerTodo/Pods-PowerTodo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D364CB5A91D01A82A2F72C06 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PowerTodo/Pods-PowerTodo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8689A53BC2353A41CEAD060 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5B2EDEC31D922CC400834128 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -238,8 +310,7 @@
 				5B2EDED31D922CC400834128 /* PowerTodo.xcdatamodeld in Sources */,
 				5B6E6C7F1D9B69A200AB6605 /* HomeViewController.swift in Sources */,
 				5B6E6C811D9B717300AB6605 /* SignUpViewController.swift in Sources */,
-				5B6E6C871D9B7D5E00AB6605 /* ResquestHandler.swift in Sources */,
-				5B6E6C891D9B827B00AB6605 /* Constants.swift in Sources */,
+				5B6E6C891D9B827B00AB6605 /* UserRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +440,9 @@
 		};
 		5B2EDEE81D922CC500834128 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D76090E83DE40BD2D3CF700E /* Pods-PowerTodo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PowerTodo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -381,7 +454,9 @@
 		};
 		5B2EDEE91D922CC500834128 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 549F28482ACC98E54BF9E0CB /* Pods-PowerTodo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PowerTodo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
