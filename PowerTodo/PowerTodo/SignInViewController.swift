@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SignInViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func signInBtn(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "fromSignToHomeSegue", sender: self)
+        
+    }
 
+    @IBAction func signUpBtn(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "signUpSegue", sender: self)
+        
+    }
 }
 

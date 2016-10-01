@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		5B2EDECB1D922CC400834128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EDECA1D922CC400834128 /* AppDelegate.swift */; };
-		5B2EDECD1D922CC400834128 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EDECC1D922CC400834128 /* ViewController.swift */; };
+		5B2EDECD1D922CC400834128 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EDECC1D922CC400834128 /* SignInViewController.swift */; };
 		5B2EDED01D922CC400834128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2EDECE1D922CC400834128 /* Main.storyboard */; };
 		5B2EDED31D922CC400834128 /* PowerTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EDED11D922CC400834128 /* PowerTodo.xcdatamodeld */; };
 		5B2EDED51D922CC400834128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2EDED41D922CC400834128 /* Assets.xcassets */; };
 		5B2EDED81D922CC400834128 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2EDED61D922CC400834128 /* LaunchScreen.storyboard */; };
 		5B2EDEE31D922CC500834128 /* PowerTodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2EDEE21D922CC500834128 /* PowerTodoTests.swift */; };
+		5B6E6C7F1D9B69A200AB6605 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C7E1D9B69A200AB6605 /* HomeViewController.swift */; };
+		5B6E6C811D9B717300AB6605 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C801D9B717300AB6605 /* SignUpViewController.swift */; };
+		5B6E6C841D9B7A7400AB6605 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C831D9B7A7400AB6605 /* User.swift */; };
+		5B6E6C871D9B7D5E00AB6605 /* ResquestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C861D9B7D5E00AB6605 /* ResquestHandler.swift */; };
+		5B6E6C891D9B827B00AB6605 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E6C881D9B827B00AB6605 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +34,7 @@
 /* Begin PBXFileReference section */
 		5B2EDEC71D922CC400834128 /* PowerTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2EDECA1D922CC400834128 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B2EDECC1D922CC400834128 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B2EDECC1D922CC400834128 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		5B2EDECF1D922CC400834128 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B2EDED21D922CC400834128 /* PowerTodo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PowerTodo.xcdatamodel; sourceTree = "<group>"; };
 		5B2EDED41D922CC400834128 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +43,11 @@
 		5B2EDEDE1D922CC500834128 /* PowerTodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerTodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2EDEE21D922CC500834128 /* PowerTodoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerTodoTests.swift; sourceTree = "<group>"; };
 		5B2EDEE41D922CC500834128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B6E6C7E1D9B69A200AB6605 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5B6E6C801D9B717300AB6605 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5B6E6C831D9B7A7400AB6605 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5B6E6C861D9B7D5E00AB6605 /* ResquestHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResquestHandler.swift; sourceTree = "<group>"; };
+		5B6E6C881D9B827B00AB6605 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +89,12 @@
 		5B2EDEC91D922CC400834128 /* PowerTodo */ = {
 			isa = PBXGroup;
 			children = (
+				5B6E6C851D9B7D4800AB6605 /* helpers */,
+				5B6E6C821D9B7A6100AB6605 /* models */,
 				5B2EDECA1D922CC400834128 /* AppDelegate.swift */,
-				5B2EDECC1D922CC400834128 /* ViewController.swift */,
+				5B6E6C7E1D9B69A200AB6605 /* HomeViewController.swift */,
+				5B2EDECC1D922CC400834128 /* SignInViewController.swift */,
+				5B6E6C801D9B717300AB6605 /* SignUpViewController.swift */,
 				5B2EDECE1D922CC400834128 /* Main.storyboard */,
 				5B2EDED41D922CC400834128 /* Assets.xcassets */,
 				5B2EDED61D922CC400834128 /* LaunchScreen.storyboard */,
@@ -97,6 +111,23 @@
 				5B2EDEE41D922CC500834128 /* Info.plist */,
 			);
 			path = PowerTodoTests;
+			sourceTree = "<group>";
+		};
+		5B6E6C821D9B7A6100AB6605 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				5B6E6C831D9B7A7400AB6605 /* User.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		5B6E6C851D9B7D4800AB6605 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5B6E6C861D9B7D5E00AB6605 /* ResquestHandler.swift */,
+				5B6E6C881D9B827B00AB6605 /* Constants.swift */,
+			);
+			name = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,14 +174,16 @@
 		5B2EDEBF1D922CC400834128 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "SG Solutions";
 				TargetAttributes = {
 					5B2EDEC61D922CC400834128 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					5B2EDEDD1D922CC500834128 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 						TestTargetID = 5B2EDEC61D922CC400834128;
 					};
 				};
@@ -199,9 +232,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B2EDECD1D922CC400834128 /* ViewController.swift in Sources */,
+				5B2EDECD1D922CC400834128 /* SignInViewController.swift in Sources */,
 				5B2EDECB1D922CC400834128 /* AppDelegate.swift in Sources */,
+				5B6E6C841D9B7A7400AB6605 /* User.swift in Sources */,
 				5B2EDED31D922CC400834128 /* PowerTodo.xcdatamodeld in Sources */,
+				5B6E6C7F1D9B69A200AB6605 /* HomeViewController.swift in Sources */,
+				5B6E6C811D9B717300AB6605 /* SignUpViewController.swift in Sources */,
+				5B6E6C871D9B7D5E00AB6605 /* ResquestHandler.swift in Sources */,
+				5B6E6C891D9B827B00AB6605 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +294,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -300,8 +340,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -320,6 +362,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -332,6 +375,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ysg.PowerTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -343,6 +387,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ysg.PowerTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -354,6 +399,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ysg.PowerTodoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowerTodo.app/PowerTodo";
 			};
 			name = Debug;
@@ -366,6 +412,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ysg.PowerTodoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PowerTodo.app/PowerTodo";
 			};
 			name = Release;
@@ -389,6 +436,7 @@
 				5B2EDEE91D922CC500834128 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B2EDEEA1D922CC500834128 /* Build configuration list for PBXNativeTarget "PowerTodoTests" */ = {
 			isa = XCConfigurationList;
@@ -397,6 +445,7 @@
 				5B2EDEEC1D922CC500834128 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
