@@ -29,7 +29,7 @@ class User {
             
             
             
-            // First make sure you got back a dictionary if that's what you expect
+            // First make sure you got back a dictionary, if that's what you expect
             guard let json = response.result.value as? [String : AnyObject] else {
                 print("Failed to get expected response from webserver.")
                 return
