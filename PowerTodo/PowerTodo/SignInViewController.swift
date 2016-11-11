@@ -27,11 +27,12 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func signUpBtn(_ sender: AnyObject) {
-        let user: User  = User(name: "John Smith", email: "johnny@emailg.com", password: "123abc", token: nil)
+        let user: User  = User(name: "John Smith", email: "johnny@emailg.com", password: "123abc")
         user.signUp()
         
+        print(user.getUserTokenDefault())
         
-        //self.performSegue(withIdentifier: "signUpSegue", sender: self)
+        self.performSegue(withIdentifier: "signUpSegue", sender: self)
         
     }
 }
