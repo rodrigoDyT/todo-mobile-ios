@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class SignInViewController: UIViewController {
     
     
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+       
     
     enum AlertControllerTitles: String{
         case incorretCredentials = "Oops"
@@ -38,6 +40,10 @@ class SignInViewController: UIViewController {
     
     @IBAction func signInButton(_ sender: AnyObject) {
         self.handleLogin()
+        self.showActivityIndicatory(uiView: self.view)
+        //let disableMyButton = sender as? UIButton
+        //disableMyButton?.isEnabled = false
+        
     }
     @IBAction func ForgotPasswordButton(_ sender: AnyObject) {
         self.performSegue(withIdentifier: "recoverPasswordSegue", sender: self)
@@ -53,17 +59,22 @@ class SignInViewController: UIViewController {
            self.buildAlert(titleController: AlertControllerTitles.incorretCredentials.rawValue, messageController: AlertControllerMessages.incompleteCredentials.rawValue, titleButton: AlertTitleForButtons.incompleteCredentials.rawValue)
         }else{
         
-        let user: User = User(
-            name: "",
-            email: self.emailTxtField.text!,
-            password: self.passwordTextField.text!
-        )
+            let user: User = User(
+                name: "",
+                email: self.emailTxtField.text!,
+                password: self.passwordTextField.text!
+            )
         
-        if(/*user.signIn()*/ user.email.characters.count > 1){
+            user.signIn()
+        
+        }
+    }
+    
+    func handleNotificationResponse(){
+        if((self.emailTxtField.text) != nil){
             self.performSegue(withIdentifier: "fromSignToHomeSegue", sender: self)
         }else{
             self.buildAlert(titleController: AlertControllerTitles.incorretCredentials.rawValue, messageController: AlertControllerMessages.incorrectCredentials.rawValue, titleButton: AlertTitleForButtons.incorrectCredentials.rawValue)
-        }
         }
     }
     
@@ -74,6 +85,23 @@ class SignInViewController: UIViewController {
         let alert = UIAlertController(title: titleController, message: messageController, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: titleButton, style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showActivityIndicatory(uiView: UIView) {
+        
+        let actInd: NVActivityIndicatorView = NVActivityIndicatorView(
+            frame: CGRect(x: 0, y: 0, width: 70, height: 70),
+            type: .ballTrianglePath,
+            color: UIColor.purple,
+            padding: CGFloat(0))
+        
+        actInd.center = uiView.center
+        uiView.addSubview(actInd)
+        actInd.startAnimating()
+        
+        
+        
+        
     }
     
 
