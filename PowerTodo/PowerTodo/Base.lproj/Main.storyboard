@@ -83,6 +83,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="PowerTodo" id="fnI-LN-dRK"/>
                     <connections>
+                        <outlet property="emailTxtField" destination="YMN-Zd-hPm" id="pfB-Zc-Dml"/>
+                        <outlet property="passwordTextField" destination="oSK-pR-14P" id="R6h-pM-05T"/>
                         <segue destination="LHL-ah-Z98" kind="show" identifier="signUpSegue" id="QQ0-US-7vv"/>
                         <segue destination="Vcm-7b-N58" kind="show" identifier="fromSignToHomeSegue" id="AJw-9j-gDb"/>
                         <segue destination="egp-V1-pks" kind="presentation" identifier="recoverPasswordSegue" id="4h0-Hl-zMm"/>
