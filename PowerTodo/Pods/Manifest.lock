@@ -1,12 +1,15 @@
 PODS:
   - Alamofire (4.0.0)
+  - NVActivityIndicatorView (3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - NVActivityIndicatorView
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
 
-PODFILE CHECKSUM: b5502cc1535c706d7d95134b1b997ad92fb38a35
+PODFILE CHECKSUM: 051ca906f49472087b6f4a661bae4d9c3fb0a2ff
 
 COCOAPODS: 1.1.0.rc.2
