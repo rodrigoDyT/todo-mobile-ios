@@ -31,6 +31,8 @@ class User {
     }
     
     func performRequest(method: Methods) {
+        
+        
         let parameters: Parameters = [
             "name" : self.name,
             "email" : self.email,
@@ -52,7 +54,7 @@ class User {
                 print("Failed to get expected response from webserver.")
                 return
             }
-            print(json)
+            
             // Then make sure you get the actual key/value types you expect
             guard let userToken = json["token"] as? String else {
                 print("Failed to get data from webserver")
@@ -64,7 +66,6 @@ class User {
         
     }
     
-    
     func setUserTokenDefault(token: String){
         let defaults = UserDefaults.standard
         defaults.set(token, forKey: "powerTodoToken")
@@ -75,7 +76,5 @@ class User {
         let defaults = UserDefaults.standard
         return defaults.object(forKey: "powerTodoToken") as! String? ?? ""
     }
-    
-    
     
 }
