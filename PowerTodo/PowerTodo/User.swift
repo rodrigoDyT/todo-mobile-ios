@@ -52,19 +52,31 @@ class User {
             // First make sure you got back a dictionary, if that's what you expect
             guard let json = response.result.value as? [String : AnyObject] else {
                 print("Failed to get expected response from webserver.")
+                self.handleSignInUp(success: false)
                 return
             }
             
             // Then make sure you get the actual key/value types you expect
             guard let userToken = json["token"] as? String else {
-                print("Failed to get data from webserver")
+                print("Failed to get token from Rodrigo's Todo API")
+                self.handleSignInUp(success: false)
                 return
             }
             self.setUserTokenDefault(token: userToken)
-            
+            self.handleSignInUp(success: true)
         }
-        
     }
+    
+    func handleSignInUp(success: Bool){
+        
+        let loginResultNotification = Notification.Name(rawValue:"loginResultNotification")
+        let nc = NotificationCenter.default
+        nc.post(name:loginResultNotification,
+                object: nil,
+                userInfo:["success":success])
+    }
+    
+
     
     func setUserTokenDefault(token: String){
         let defaults = UserDefaults.standard
