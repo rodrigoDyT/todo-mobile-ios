@@ -55,10 +55,12 @@ class SignInViewController: UIViewController {
     
     func handleLogin(){
         
-        if((self.emailTxtField.text?.characters.count)! < 6 || (self.passwordTextField.text?.characters.count)! < 8 ){
-           self.buildAlert(titleController: AlertControllerTitles.incorretCredentials.rawValue, messageController: AlertControllerMessages.incompleteCredentials.rawValue, titleButton: AlertTitleForButtons.incompleteCredentials.rawValue)
+        if((self.emailTxtField.text?.characters.count)! < 6 || (self.passwordTextField.text?.characters.count)! < 3 ){
+            
+            self.buildAlert(titleController: AlertControllerTitles.incorretCredentials.rawValue, messageController: AlertControllerMessages.incompleteCredentials.rawValue, titleButton: AlertTitleForButtons.incompleteCredentials.rawValue)
+            
         }else{
-        
+            
             let user: User = User(
                 name: "",
                 email: self.emailTxtField.text!,
@@ -66,13 +68,23 @@ class SignInViewController: UIViewController {
             )
         
             user.signIn()
-        
+            let loginResultNotification = Notification.Name(rawValue:"loginResultNotification")
+            let nc = NotificationCenter.default
+            nc.addObserver(forName:loginResultNotification, object:nil, queue:nil, using:handleNotificationResponse)
         }
     }
     
-    func handleNotificationResponse(){
-        if((self.emailTxtField.text) != nil){
+    func handleNotificationResponse(notification:Notification) -> Void{
+        
+        guard let userInfo = notification.userInfo,
+            let success  = userInfo["success"] as? Bool else {
+                print("No userInfo found in notification")
+                return
+        }
+        
+        if(success){
             self.performSegue(withIdentifier: "fromSignToHomeSegue", sender: self)
+            
         }else{
             self.buildAlert(titleController: AlertControllerTitles.incorretCredentials.rawValue, messageController: AlertControllerMessages.incorrectCredentials.rawValue, titleButton: AlertTitleForButtons.incorrectCredentials.rawValue)
         }
@@ -98,9 +110,6 @@ class SignInViewController: UIViewController {
         actInd.center = uiView.center
         uiView.addSubview(actInd)
         actInd.startAnimating()
-        
-        
-        
         
     }
     

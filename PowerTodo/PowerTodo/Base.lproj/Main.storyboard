@@ -167,6 +167,9 @@
                                         <state key="normal" title="Criar" backgroundImage="LoginButton">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="createAccountButton:" destination="LHL-ah-Z98" eventType="touchUpInside" id="QEu-q8-XKe"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbF-Ll-cG3">
                                         <frame key="frameInset" minX="73" minY="120" width="197" height="30"/>
@@ -203,6 +206,9 @@
                                         <state key="normal" title="Voltar" backgroundImage="SenhaNovaConta">
                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="goBackToSignPageButton:" destination="LHL-ah-Z98" eventType="touchUpInside" id="Mc7-PH-Kc2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,6 +216,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTxtField" destination="fC9-MX-QQJ" id="Xa0-NA-A69"/>
+                        <outlet property="nameTxtField" destination="xbF-Ll-cG3" id="Ngk-1Z-7tv"/>
+                        <outlet property="passwordTxtField" destination="R2L-fK-bkc" id="HLm-89-tgv"/>
+                        <segue destination="Vcm-7b-N58" kind="show" identifier="signupToHomeSegue" id="YEC-kF-FO1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjK-si-zmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -240,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTL-5B-72t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629.60000000000002" y="87.706146926536732"/>
+            <point key="canvasLocation" x="1167" y="-80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Fj-ow-TDy">
@@ -265,4 +277,7 @@
         <image name="LoginButton" width="228" height="40"/>
         <image name="SenhaNovaConta" width="189" height="50"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YEC-kF-FO1"/>
+    </inferredMetricsTieBreakers>
 </document>
