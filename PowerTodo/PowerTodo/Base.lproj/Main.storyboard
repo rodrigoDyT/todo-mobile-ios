@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="-324" y="53.523238380809602"/>
         </scene>
-        <!--View Controller-->
+        <!--Recover Password View Controller-->
         <scene sceneID="Ial-9X-rNI">
             <objects>
-                <viewController id="egp-V1-pks" sceneMemberID="viewController">
+                <viewController id="egp-V1-pks" customClass="RecoverPasswordViewController" customModule="PowerTodo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AVt-QH-qEN"/>
                         <viewControllerLayoutGuide type="bottom" id="AtU-wU-Swm"/>
@@ -132,6 +132,9 @@
                                         <state key="normal" title="Voltar" backgroundImage="SenhaNovaConta">
                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="goBackToSignInButton:" destination="egp-V1-pks" eventType="touchUpInside" id="b9D-qt-8UV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -139,8 +142,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="lbq-j1-5YM" kind="unwind" identifier="fromRecoverPasswordToSignInSegue" unwindAction="unwindHome:" id="nCs-47-C15"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0YI-mU-QXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="lbq-j1-5YM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-642.39999999999998" y="839.73013493253382"/>
         </scene>
@@ -207,6 +214,7 @@
                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="goBackToSignInButton:" destination="LHL-ah-Z98" eventType="touchUpInside" id="RHK-N6-BIP"/>
                                             <action selector="goBackToSignPageButton:" destination="LHL-ah-Z98" eventType="touchUpInside" id="Mc7-PH-Kc2"/>
                                         </connections>
                                     </button>
@@ -221,9 +229,11 @@
                         <outlet property="nameTxtField" destination="xbF-Ll-cG3" id="Ngk-1Z-7tv"/>
                         <outlet property="passwordTxtField" destination="R2L-fK-bkc" id="HLm-89-tgv"/>
                         <segue destination="Vcm-7b-N58" kind="show" identifier="signupToHomeSegue" id="YEC-kF-FO1"/>
+                        <segue destination="gAm-Xr-jWH" kind="unwind" identifier="fromSignUpToSignInSegue" unwindAction="unwindHome:" id="gao-Zn-nY8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjK-si-zmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gAm-Xr-jWH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="613.60000000000002" y="839.73013493253382"/>
         </scene>
@@ -265,6 +275,10 @@
                                         <frame key="frameInset" width="343" height="498"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Vcm-7b-N58" id="cdr-Wk-akB"/>
+                                            <outlet property="delegate" destination="Vcm-7b-N58" id="9Tj-Z2-3x6"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -275,9 +289,11 @@
                     <connections>
                         <outlet property="todosTableView" destination="Lgj-G5-0i3" id="N33-PU-WpM"/>
                         <segue destination="ck1-9d-bxl" kind="show" identifier="newTodoSegue" id="5Y5-Q3-huA"/>
+                        <segue destination="WUL-cb-tUJ" kind="unwind" identifier="fromHomeToSignInSegue" unwindAction="unwindHome:" id="0E2-o0-851"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTL-5B-72t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WUL-cb-tUJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1165.5999999999999" y="-80.50974512743629"/>
         </scene>
@@ -416,6 +432,6 @@
         <image name="SenhaNovaConta" width="189" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AJw-9j-gDb"/>
+        <segue reference="YEC-kF-FO1"/>
     </inferredMetricsTieBreakers>
 </document>

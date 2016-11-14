@@ -14,7 +14,7 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-       
+    var actInd: NVActivityIndicatorView! = nil
     
     enum AlertControllerTitles: String{
         case incorretCredentials = "Oops"
@@ -39,8 +39,8 @@ class SignInViewController: UIViewController {
 
     
     @IBAction func signInButton(_ sender: AnyObject) {
-        self.handleLogin()
         self.showActivityIndicatory(uiView: self.view)
+        self.handleLogin()
         //let disableMyButton = sender as? UIButton
         //disableMyButton?.isEnabled = false
         
@@ -58,6 +58,8 @@ class SignInViewController: UIViewController {
         if((self.emailTxtField.text?.characters.count)! < 6 || (self.passwordTextField.text?.characters.count)! < 3 ){
             
             self.buildAlert(titleController: AlertControllerTitles.incorretCredentials.rawValue, messageController: AlertControllerMessages.incompleteCredentials.rawValue, titleButton: AlertTitleForButtons.incompleteCredentials.rawValue)
+            
+            self.resetFields()
             
         }else{
             
@@ -85,9 +87,11 @@ class SignInViewController: UIViewController {
         if(success){
             self.performSegue(withIdentifier: "fromSignToHomeSegue", sender: self)
             
+            
         }else{
             self.buildAlert(titleController: AlertControllerTitles.incorretCredentials.rawValue, messageController: AlertControllerMessages.incorrectCredentials.rawValue, titleButton: AlertTitleForButtons.incorrectCredentials.rawValue)
         }
+        self.resetFields()
     }
     
     
@@ -101,7 +105,7 @@ class SignInViewController: UIViewController {
     
     func showActivityIndicatory(uiView: UIView) {
         
-        let actInd: NVActivityIndicatorView = NVActivityIndicatorView(
+        self.actInd = NVActivityIndicatorView(
             frame: CGRect(x: 0, y: 0, width: 70, height: 70),
             type: .ballTrianglePath,
             color: UIColor.purple,
@@ -112,6 +116,31 @@ class SignInViewController: UIViewController {
         actInd.startAnimating()
         
     }
+    
+    @IBAction func unwindHome(_ segue: UIStoryboardSegue) {
+        
+        self.resetFields()
+        
+        if !segue.source.isBeingDismissed {
+            
+            segue.source.dismiss(animated: true, completion: nil) ;
+            
+        }
+        
+        
+    }
+    
+    func resetFields(){
+        if(self.actInd != nil){
+            self.actInd.stopAnimating()
+        }
+        let nc = NotificationCenter.default
+        nc.removeObserver(self)
+        self.passwordTextField.text = ""
+    }
+    
+    
+    
     
 
 }

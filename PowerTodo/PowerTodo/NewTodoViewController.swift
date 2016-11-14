@@ -32,6 +32,7 @@ class NewTodoViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.title = "PowerTodo"
         self.todoLevelPicker.dataSource = self
         self.todoLevelPicker.delegate = self
         

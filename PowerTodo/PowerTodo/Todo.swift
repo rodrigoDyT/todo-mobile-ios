@@ -73,7 +73,6 @@ class Todo {
             response in
             
             // First make sure you got back a dictionary, if that's what you expect
-            
             guard let todoReturn = response.result.value as? [AnyObject] else {
                 print("Failed to get expected response from webserver.")
                 self.handleTodoResponse(success: false, todoReturn: [])
@@ -86,7 +85,7 @@ class Todo {
     
     func handleTodoResponse(success: Bool, todoReturn: [AnyObject]){
         
-        let todoResponse = Notification.Name(rawValue:"todoResponse")
+        let todoResponse = Notification.Name(rawValue:"waitForTodos")
         let nc = NotificationCenter.default
         nc.post(name:todoResponse,
                 object: nil,

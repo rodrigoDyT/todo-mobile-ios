@@ -22,6 +22,7 @@
 		5B9E1DEC1DD9339E0016AD44 /* NewTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E1DEB1DD9339E0016AD44 /* NewTodoViewController.swift */; };
 		5B9E1DEE1DD93AFE0016AD44 /* TodoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E1DED1DD93AFE0016AD44 /* TodoRouter.swift */; };
 		5B9E1DF01DD93E1F0016AD44 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E1DEF1DD93E1F0016AD44 /* Todo.swift */; };
+		5B9E1DF21DD97F9D0016AD44 /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9E1DF11DD97F9D0016AD44 /* RecoverPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		5B9E1DEB1DD9339E0016AD44 /* NewTodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTodoViewController.swift; sourceTree = "<group>"; };
 		5B9E1DED1DD93AFE0016AD44 /* TodoRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoRouter.swift; sourceTree = "<group>"; };
 		5B9E1DEF1DD93E1F0016AD44 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		5B9E1DF11DD97F9D0016AD44 /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		C317D8B5C2AF6971A71DFA59 /* Pods_PowerTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76090E83DE40BD2D3CF700E /* Pods-PowerTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerTodo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PowerTodo/Pods-PowerTodo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 				5B2EDECC1D922CC400834128 /* SignInViewController.swift */,
 				5B6E6C801D9B717300AB6605 /* SignUpViewController.swift */,
 				5B9E1DEB1DD9339E0016AD44 /* NewTodoViewController.swift */,
+				5B9E1DF11DD97F9D0016AD44 /* RecoverPasswordViewController.swift */,
 				5B2EDECE1D922CC400834128 /* Main.storyboard */,
 				5B2EDED41D922CC400834128 /* Assets.xcassets */,
 				5B2EDED61D922CC400834128 /* LaunchScreen.storyboard */,
@@ -318,6 +321,7 @@
 				5B6E6C841D9B7A7400AB6605 /* User.swift in Sources */,
 				5B9E1DEE1DD93AFE0016AD44 /* TodoRouter.swift in Sources */,
 				5B2EDED31D922CC400834128 /* PowerTodo.xcdatamodeld in Sources */,
+				5B9E1DF21DD97F9D0016AD44 /* RecoverPasswordViewController.swift in Sources */,
 				5B6E6C7F1D9B69A200AB6605 /* HomeViewController.swift in Sources */,
 				5B9E1DEC1DD9339E0016AD44 /* NewTodoViewController.swift in Sources */,
 				5B6E6C811D9B717300AB6605 /* SignUpViewController.swift in Sources */,
