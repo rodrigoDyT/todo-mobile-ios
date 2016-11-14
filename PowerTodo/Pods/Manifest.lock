@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.0.0)
+  - Alamofire (4.0.1)
   - NVActivityIndicatorView (3.0)
   - SwipyCell (2.0.0)
 
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - SwipyCell (~> 2.0.0)
 
 SPEC CHECKSUMS:
-  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
   SwipyCell: 731853919ed45c00d99c2a178fab03138dd7801d
 

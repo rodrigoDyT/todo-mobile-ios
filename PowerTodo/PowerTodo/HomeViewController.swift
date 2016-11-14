@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class HomeViewController : UITableViewController {
+class HomeViewController : UIViewController {
     
     @IBOutlet weak var todosTableView: UITableView!
     
@@ -19,6 +19,9 @@ class HomeViewController : UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func newTodoButton(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "newTodoSegue", sender: self)
+    }
    
     
     
