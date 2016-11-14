@@ -36,6 +36,9 @@ class SignUpViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationItem.title = "PowerTodo"
+        
     }
     
     @IBAction func createAccountButton(_ sender: AnyObject) {
@@ -111,5 +114,8 @@ class SignUpViewController : UIViewController {
         
     }
     
+    @IBAction func goBackToSignInButton(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "fromSignUpToSignInSegue", sender: self)
+    }
     
 }

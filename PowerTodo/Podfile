@@ -5,4 +5,5 @@ use_frameworks!
 target 'PowerTodo' do
     pod 'Alamofire', '~> 4.0'
     pod 'NVActivityIndicatorView'
+    pod 'SwipyCell', '~> 2.0.0'
 end
