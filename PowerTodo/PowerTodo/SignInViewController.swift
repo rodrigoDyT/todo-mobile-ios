@@ -35,6 +35,8 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.purple
     }
 
     
@@ -126,8 +128,6 @@ class SignInViewController: UIViewController {
             segue.source.dismiss(animated: true, completion: nil) ;
             
         }
-        
-        
     }
     
     func resetFields(){
@@ -136,6 +136,7 @@ class SignInViewController: UIViewController {
         }
         let nc = NotificationCenter.default
         nc.removeObserver(self)
+        self.emailTxtField.text = ""
         self.passwordTextField.text = ""
     }
     
