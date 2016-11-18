@@ -38,6 +38,8 @@ class SignUpViewController : UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.title = "PowerTodo"
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.purple
         
     }
     

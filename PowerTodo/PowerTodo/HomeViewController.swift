@@ -9,12 +9,19 @@
 import Foundation
 import UIKit
 import SwipyCell
+import NVActivityIndicatorView
 
 class HomeViewController : UIViewController,UITableViewDelegate, UITableViewDataSource, SwipyCellDelegate{
     
     @IBOutlet weak var todosTableView: UITableView!
+    var actInd: NVActivityIndicatorView! = nil
     
     var userTodos: [[String: AnyObject]]!
+    
+    enum ActionOnTodos {
+        case setDone
+        case destroy
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,8 +34,13 @@ class HomeViewController : UIViewController,UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showActivityIndicatory(uiView: self.view)
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.purple
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.title = "PowerTodo"
+        
         
         let rightButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "shut_down"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(logout))
         
@@ -47,6 +59,7 @@ class HomeViewController : UIViewController,UITableViewDelegate, UITableViewData
     }
     
     func handleNotificationResponse(notification: Notification){
+        self.actInd.stopAnimating()
         guard let userInfo = notification.userInfo,
             let success  = userInfo["success"] as? Bool else {
                 print("No userInfo found in notification")
@@ -63,7 +76,7 @@ class HomeViewController : UIViewController,UITableViewDelegate, UITableViewData
             self.todosTableView.isHidden = false
             
         }else{
-            let alert = UIAlertController(title: "Oops", message: "Eai queridona ou queridão, não achei nenhum Todo, tenta de novo", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Oops", message: "Eai queridona ou queridão, não achei nenhum Todo, tenta de novo ou cria alguns ;)", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok, vou tentar", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
@@ -97,48 +110,51 @@ class HomeViewController : UIViewController,UITableViewDelegate, UITableViewData
         return 1
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(self.userTodos != nil){
             let userTodo: [String: AnyObject] = self.userTodos[indexPath.row]
             
-            let cell = SwipyCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
-            cell.selectionStyle = .gray
-            cell.contentView.backgroundColor = UIColor.white
-            cell.textLabel?.font = UIFont(name: "Helvetica Neue Condensed Bold", size: 17)
-            cell.detailTextLabel?.font = UIFont(name: "Helvetica Neue", size: 15)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as! TableCellTodoCustomize
+            cell.todoDescriptionLabel.text = userTodo["description"] as? String
+            cell.todoTitleLabel.text = userTodo["title"] as? String
+            cell.todoLevelLabel.text = userTodo["level"] as? String
             
-            cell.textLabel?.textColor = UIColor.purple
-            cell.detailTextLabel?.textColor = UIColor.purple
-            
-            cell.detailTextLabel?.textAlignment = .right
-            
-            let doneView = viewWithImageName("done")
-            let greenColor = UIColor(red: 85.0 / 255.0, green: 213.0 / 255.0, blue: 80.0 / 255.0, alpha: 1.0)
-            
-            let deleteView = viewWithImageName("close")
-            let redColor = UIColor(red: 232.0 / 255.0, green: 61.0 / 255.0, blue: 14.0 / 255.0, alpha: 1.0)
-            
-            
-            cell.defaultColor = tableView.backgroundView?.backgroundColor
-            cell.delegate = self
-            
-            cell.textLabel?.text = userTodo["title"] as? String
-            cell.detailTextLabel?.text = userTodo["description"] as? String
-            
-            cell.setSwipeGesture(doneView, color: greenColor, mode: .switch, state: .state1, completionHandler: { (cell: SwipyCell, state: SwipyCellState, mode: SwipyCellMode) in
-                print("Did swipe \"Checkmark\" cell")
-            })
-            
-            cell.setSwipeGesture(deleteView, color: redColor, mode: .switch, state: .state3, completionHandler: { (cell: SwipyCell, state: SwipyCellState, mode: SwipyCellMode) in
-                print("Did swipe \"Cross\" cell")
-            })
+            cell.todoDueDateLabel.text = userTodo["dueDate"] as? String
+         
+            let priority: String = (userTodo["priority"] as? String)!
+            switch priority {
+            case "Pra ontem":
+                cell.todoPriority.image = UIImage(named: "priorityPraOntem")
+                break
+            case "Sério":
+                cell.todoPriority.image = UIImage(named: "prioritySerio")
+                break
+            case "Normale":
+                cell.todoPriority.image = UIImage(named: "priorityNormale")
+                break
+            default:
+                cell.todoPriority.image = UIImage(named: "priorityDeBuenas")
+            }
             
             return cell
             
         }else{
             let cell = SwipyCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
-            cell.textLabel?.text = "No data loaded"
+            cell.textLabel?.text = "Nenhum todo encontrado queridona ou queridão"
             return cell
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            print ("About to delete row")
+            
         }
     }
 
@@ -150,7 +166,40 @@ class HomeViewController : UIViewController,UITableViewDelegate, UITableViewData
     
     // When the user is dragging, this method is called with the percentage from the border
     func swipeableTableViewCell(_ cell: SwipyCell, didSwipeWithPercentage percentage: CGFloat) {
-        print(percentage)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Apagar") { (action, indexPath) in
+            // delete item at indexPath
+            let ind: IndexPath = (indexPath as IndexPath)
+            self.updateTodoBasedOnSwipe(action: ActionOnTodos.destroy, indexPath: ind)
+        }
+        
+        let done = UITableViewRowAction(style: .normal, title: "Terminei") { (action, indexPath) in
+            // share item at indexPath
+            let ind: IndexPath = (indexPath as IndexPath)
+            self.updateTodoBasedOnSwipe(action: ActionOnTodos.setDone, indexPath: ind)
+        }
+        
+        done.backgroundColor = UIColor.blue
+        
+        return [delete, done]
+    }
+    
+    
+    func updateTodoBasedOnSwipe(action: ActionOnTodos, indexPath: IndexPath) {
+        switch action {
+        case .setDone:
+            print("setting done")
+        case .destroy:
+            print("destroying todo")
+        }
+        
+        self.userTodos.remove(at: indexPath.row)
+        self.todosTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+        self.todosTableView.reloadData()
+        
     }
     
     
@@ -160,5 +209,29 @@ class HomeViewController : UIViewController,UITableViewDelegate, UITableViewData
         imageView.contentMode = .center
         return imageView
     }
+    
+    @IBAction func unwindHomeViewTodos(_ segue: UIStoryboardSegue) {
+        self.getTodos()
+        self.todosTableView.reloadData()
+        
+        if !segue.source.isBeingDismissed {
+            segue.source.dismiss(animated: true, completion: nil) ;
+        }
+    }
+    
+    func showActivityIndicatory(uiView: UIView) {
+        
+        self.actInd = NVActivityIndicatorView(
+            frame: CGRect(x: 0, y: 0, width: 70, height: 70),
+            type: .ballGridPulse,
+            color: UIColor.purple,
+            padding: CGFloat(0))
+        
+        actInd.center = uiView.center
+        uiView.addSubview(actInd)
+        actInd.startAnimating()
+        
+    }
+    
     
 }

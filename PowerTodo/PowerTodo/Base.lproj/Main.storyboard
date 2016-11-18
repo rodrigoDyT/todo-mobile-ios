@@ -271,10 +271,62 @@
                                 <frame key="frameInset" minX="16" minY="141" width="343" height="506"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lgj-G5-0i3">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="112" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lgj-G5-0i3">
                                         <frame key="frameInset" width="343" height="498"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todoCell" rowHeight="112" id="GEo-8R-baH" customClass="TableCellTodoCustomize" customModule="PowerTodo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="343" height="112"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GEo-8R-baH" id="TLC-7v-otx">
+                                                    <frame key="frameInset" width="343" height="111"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jsC-de-nFQ">
+                                                            <frame key="frameInset" minY="-10" width="16" height="121"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4I-rc-roU">
+                                                            <frame key="frameInset" minX="24" minY="8" width="321" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Descrição: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yh-bK-Gvr">
+                                                            <frame key="frameInset" minX="24" minY="27" width="321" height="42"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nível:  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iui-zl-cQR">
+                                                            <frame key="frameInset" minX="24" minY="90" width="163" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Para:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kt2-DP-FBe">
+                                                            <frame key="frameInset" minX="203" minY="90" width="132" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="todoDescriptionLabel" destination="5yh-bK-Gvr" id="oXC-58-hsv"/>
+                                                    <outlet property="todoDueDateLabel" destination="kt2-DP-FBe" id="DBL-y9-8gx"/>
+                                                    <outlet property="todoLevelLabel" destination="iui-zl-cQR" id="DBw-wD-X5Z"/>
+                                                    <outlet property="todoPriority" destination="jsC-de-nFQ" id="e40-lZ-Dfz"/>
+                                                    <outlet property="todoTitleLabel" destination="P4I-rc-roU" id="HwW-jZ-gIb"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
                                         <connections>
                                             <outlet property="dataSource" destination="Vcm-7b-N58" id="cdr-Wk-akB"/>
                                             <outlet property="delegate" destination="Vcm-7b-N58" id="9Tj-Z2-3x6"/>
@@ -288,7 +340,7 @@
                     </view>
                     <connections>
                         <outlet property="todosTableView" destination="Lgj-G5-0i3" id="N33-PU-WpM"/>
-                        <segue destination="ck1-9d-bxl" kind="show" identifier="newTodoSegue" id="5Y5-Q3-huA"/>
+                        <segue destination="ck1-9d-bxl" kind="presentation" identifier="newTodoSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="5Y5-Q3-huA"/>
                         <segue destination="WUL-cb-tUJ" kind="unwind" identifier="fromHomeToSignInSegue" unwindAction="unwindHome:" id="0E2-o0-851"/>
                     </connections>
                 </viewController>
@@ -365,17 +417,6 @@
                                         <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jj-U4-KlB">
-                                        <frame key="frameInset" minX="89" minY="521" width="164" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Feito !" backgroundImage="LoginButton">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="createTodoButton:" destination="ck1-9d-bxl" eventType="touchUpInside" id="Dgn-BN-4Wg"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data de entrega" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-Zl-bJk">
                                         <frame key="frameInset" minX="90" minY="148" width="173" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -390,6 +431,28 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07C-lu-WF6">
+                                        <frame key="frameInset" minX="195" minY="516" width="133" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Voltar" backgroundImage="SenhaNovaConta">
+                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goBackToHomeViewButton:" destination="ck1-9d-bxl" eventType="touchUpInside" id="4eW-Gw-YN7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Jj-U4-KlB">
+                                        <frame key="frameInset" minX="18" minY="516" width="164" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Feito !" backgroundImage="LoginButton">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createTodoButton:" destination="ck1-9d-bxl" eventType="touchUpInside" id="Dgn-BN-4Wg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -402,11 +465,13 @@
                         <outlet property="todoLevelPicker" destination="XYd-iG-m53" id="q8z-di-jov"/>
                         <outlet property="todoPriorityPicker" destination="q5v-Nz-BpP" id="XgC-qV-dJg"/>
                         <outlet property="todoTitleTxtField" destination="N0c-9I-xfl" id="XEF-W9-E4d"/>
+                        <segue destination="j4b-et-zoj" kind="unwind" identifier="fromNewTodoToHomeSegue" unwindAction="unwindHomeViewTodos:" id="geI-qx-IHb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ml-a5-wOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="j4b-et-zoj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="-162"/>
+            <point key="canvasLocation" x="2332" y="-162.3688155922039"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Fj-ow-TDy">
@@ -432,6 +497,6 @@
         <image name="SenhaNovaConta" width="189" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YEC-kF-FO1"/>
+        <segue reference="AJw-9j-gDb"/>
     </inferredMetricsTieBreakers>
 </document>
